@@ -1,0 +1,23 @@
+{
+  "name": "Studio-Data-and-Variables",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samejima-san/Studio-Data-and-Variables.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/samejima-san/Studio-Data-and-Variables/issues"
+  },
+  "homepage": "https://github.com/samejima-san/Studio-Data-and-Variables#readme",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
+}

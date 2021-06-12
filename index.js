@@ -16,7 +16,8 @@ let fuelLevel = 100.0
 let weatherStatus = "clear"
 let takeoff = "YES"
 let dash = "-------------------------------------"
-
+const input = require('readline-sync');
+astronautCount = input.question("How many astronauts are there? ");
 // Write code to generate the LC04 report here:
 function generate(){
   automate("LC04 - LAUNCH CHECKLIST", [date, time], ["Date", "Time"], false, ["",""])
