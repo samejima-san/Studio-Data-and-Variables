@@ -19,19 +19,20 @@ let dash = "-------------------------------------"
 
 // Write code to generate the LC04 report here:
 function generate(){
-  automate("LC04 - LAUNCH CHECKLIST", [date, time], ["Date", "Time"])
-  automate("ASTRONAUT INFO" , [astronautCount, astronautStatus], ["count", "status"])
-  automate("FUEL DATA", [fuelTempCelsius, fuelLevel], ["fuel temp celsius", "fuel level"])
-  automate("MASS DATA", [crewMassKg, fuelMassKg, shuttleMassKg, totalMassKg], ["Crew Mass", "Fuel mass", "Shuttle mass", "Total mass"])
-  automate("FLIGHT PLAN", [weatherStatus], ["weather"])
-  automate("OVERALL STATUS", [takeoff], ["Clear for takeoff"])
+  automate("LC04 - LAUNCH CHECKLIST", [date, time], ["Date", "Time"], false, ["",""])
+  automate("ASTRONAUT INFO" , [astronautCount, astronautStatus], ["count", "status"], true, ["",""])
+  automate("FUEL DATA", [fuelTempCelsius, fuelLevel], ["fuel temp celsius", "fuel level"], true, ["C","%"])
+  automate("MASS DATA", [crewMassKg, fuelMassKg, shuttleMassKg, totalMassKg], ["Crew Mass", "Fuel mass", "Shuttle mass", "Total mass"], true, ["kg","kg","kg","kg"])
+  automate("FLIGHT PLAN", [weatherStatus], ["weather"], true, [""])
+  automate("OVERALL STATUS", [takeoff], ["Clear for takeoff"], true, [""])
 }
 
-function automate(title, listofitems, listoftitles){
+function automate(title, listofitems, listoftitles, tab, suffix){
   console.log(dash)
   console.log("> " + title)
   console.log(dash)
-  listofitems.forEach((element, index) => console.log("* " + listoftitles[index] + ": " + element))
+  if(!tab){listofitems.forEach((element, index) => console.log(listoftitles[index] + ": " + element + " " + suffix[index])) }
+  else{listofitems.forEach((element, index) => console.log("* " + listoftitles[index] + ": " + element + " " + suffix[index])) }
   console.log("")
 }
 
